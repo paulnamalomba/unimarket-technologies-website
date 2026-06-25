@@ -28,7 +28,7 @@ export default function HomePage() {
             Business technology, designed to work
           </Badge>
           <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-bold leading-[1.04] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-[72px]">
-            Connect your business to{' '}
+            Connecting businesses to{' '}
             <span className="text-primary">better systems.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-xl sm:leading-9">

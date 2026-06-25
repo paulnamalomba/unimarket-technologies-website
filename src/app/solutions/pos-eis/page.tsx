@@ -7,14 +7,13 @@ import {
   CreditCard,
   PackageSearch,
   ReceiptText,
-  RefreshCcw,
-  ShieldCheck,
   ShoppingCart,
   UsersRound,
 } from 'lucide-react';
 import Image from 'next/image';
 
 import { CommerceDashboard } from '@/components/commerce-dashboard';
+import { ExpandingImageCards } from '@/components/expanding-image-cards';
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -32,6 +31,37 @@ const workflow = [
   { icon: PackageSearch, label: 'Stock updated', detail: 'Inventory movement reflected in the same workflow.' },
   { icon: ReceiptText, label: 'Document prepared', detail: 'Receipt or invoice behavior based on verified rules.' },
   { icon: BarChart3, label: 'Reporting refreshed', detail: 'Useful operating information without repeat capture.' },
+] as const;
+
+const paymentCapabilities = [
+  {
+    title: 'Clear payment state',
+    description:
+      'Keep initiated, approved, declined, cancelled, and retry states understandable for staff and customers.',
+    href: '/contact',
+    label: 'Design the payment flow',
+    image: '/images/solution-cards/card-payments.webp',
+    imageAlt: 'Customer completing a contactless payment on a modern card terminal',
+  },
+  {
+    title: 'Reconciliation-ready',
+    description:
+      'Retain transaction references and operational context so teams can investigate and resolve mismatches.',
+    href: '/contact',
+    label: 'Connect reconciliation',
+    image: '/images/solution-cards/electronic-invoicing.webp',
+    imageAlt: 'Operations professional reviewing connected payment and invoicing records',
+  },
+  {
+    title: 'High-trust boundaries',
+    description:
+      'Keep sensitive credentials server-side and design clear, recoverable behavior for failures and interruptions.',
+    href: '/contact',
+    label: 'Plan secure integration',
+    image: '/images/solution-cards/enterprise-software.webp',
+    imageAlt: 'Secure enterprise payment systems monitored from an operations workspace',
+    tone: 'dark' as const,
+  },
 ] as const;
 
 export default function PosEisPage() {
@@ -140,33 +170,7 @@ export default function PosEisPage() {
             eyebrow="Payments"
             title="Card machines belong in the workflow—not beside it."
           />
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
-            {[
-              {
-                icon: CreditCard,
-                title: 'Clear payment state',
-                description: 'Keep initiated, approved, declined, cancelled, and retry states understandable.',
-              },
-              {
-                icon: RefreshCcw,
-                title: 'Reconciliation-ready',
-                description: 'Retain the references and operational context needed to investigate mismatches.',
-              },
-              {
-                icon: ShieldCheck,
-                title: 'High-trust boundaries',
-                description: 'Keep sensitive credentials server-side and design for safe failure and recovery.',
-              },
-            ].map((item) => (
-              <Card className="p-7" key={item.title}>
-                <span className="grid size-12 place-items-center rounded-xl bg-brand-50 text-primary">
-                  <item.icon className="size-5" aria-hidden="true" />
-                </span>
-                <h3 className="mt-7 text-xl font-semibold">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.description}</p>
-              </Card>
-            ))}
-          </div>
+          <ExpandingImageCards className="mt-12" items={paymentCapabilities} />
         </div>
       </section>
 
