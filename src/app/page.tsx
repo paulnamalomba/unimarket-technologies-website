@@ -1,21 +1,26 @@
 import {
   ArrowRight,
-  BadgeCheck,
-  Check,
-  CircleDot,
-  Layers3,
-  ShieldCheck,
-  Sparkles,
+  // BadgeCheck,
+  // Check,
+  // CircleDot,
+  // Layers3,
+  // ShieldCheck,
+  // Sparkles,
 } from 'lucide-react';
 import Image from 'next/image';
 
-import { CategoryContentShowcase } from '@/components/category-content-showcase';
+// import { CategoryContentShowcase } from '@/components/category-content-showcase';
 import { CommerceDashboard } from '@/components/commerce-dashboard';
 import { ExpandingImageCards } from '@/components/expanding-image-cards';
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { capabilities, deliveryProcess, services, solutions } from '@/config/site';
+import { 
+  // capabilities, 
+  // deliveryProcess, 
+  // services, 
+  solutions 
+} from '@/config/site';
 
 export default function HomePage() {
   return (
@@ -23,13 +28,13 @@ export default function HomePage() {
       <section className="hero-radial relative overflow-hidden">
         <div aria-hidden="true" className="hero-grid pointer-events-none absolute inset-0" />
         <div className="site-container relative pb-20 pt-20 text-center sm:pt-24 lg:pb-28 lg:pt-28">
-          <Badge>
+          {/* <Badge>
             <Sparkles className="size-3.5" aria-hidden="true" />
             Business technology, designed to work
-          </Badge>
+          </Badge> */}
           <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-bold leading-[1.04] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-[72px]">
-            Connecting businesses to{' '}
-            <span className="text-primary">better systems.</span>
+            Providing businesses with{' '}
+            <span className="text-primary">better solutions.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-xl sm:leading-9">
             Unimarket Technologies designs and delivers POS, electronic invoicing, enterprise software,
@@ -63,7 +68,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-white">
+      {/* <section className="border-y border-border bg-white">
         <div className="site-container grid gap-5 py-8 sm:grid-cols-5">
           {capabilities.map((capability, index) => (
             <div
@@ -78,7 +83,7 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="section-space">
         <div className="site-container">
@@ -103,7 +108,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-space bg-[#f7f9fc]">
+      {/* How the work happens */}
+      {/* <section className="section-space bg-[#f7f9fc]">
         <div className="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionHeading
@@ -238,8 +244,9 @@ export default function HomePage() {
             />
           </div>
         </div>
-      </section>
-
+      </section> */}
+      
+      {/* Section business Call to Action */}
       <section className="pb-20 sm:pb-28">
         <div className="site-container">
           <div className="dark-panel overflow-hidden rounded-[28px] px-6 py-14 text-center text-white sm:px-12 sm:py-20">

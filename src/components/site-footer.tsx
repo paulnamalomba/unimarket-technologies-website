@@ -17,7 +17,7 @@ export function SiteFooter() {
           <div className="mt-6 grid gap-3 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <MapPin className="size-4 text-primary" aria-hidden="true" />
-              Malawi · Exact office details to be confirmed
+              Malawi · 1st Floor, Meridien House, Victoria Avenue, Blantyre
             </span>
             <span className="flex items-center gap-2">
               <Mail className="size-4 text-primary" aria-hidden="true" />
@@ -59,8 +59,8 @@ export function SiteFooter() {
 
       <div className="border-t border-border">
         <div className="site-container flex flex-col gap-3 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Unimarket Technologies. Prototype content.</p>
-          <p>Next.js · TypeScript · Tailwind CSS · shadcn-inspired components</p>
+          <p>© {new Date().getFullYear()} Unimarket Technologies v1.0.0.0002.</p>
+          <p>Next.js + React.js · TypeScript · Tailwind CSS · shadcnui · Nuxt.js cues</p>
         </div>
       </div>
     </footer>
