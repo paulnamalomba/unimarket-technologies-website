@@ -59,7 +59,7 @@ export function SiteFooter() {
 
       <div className="border-t border-border">
         <div className="site-container flex flex-col gap-3 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Unimarket Technologies v1.0.0.0002.</p>
+          <p>© {new Date().getFullYear()} Unimarket Technologies v1.0.0.0003.</p>
           <p>Next.js + React.js · TypeScript · Tailwind CSS · shadcnui · Nuxt.js cues</p>
         </div>
       </div>
