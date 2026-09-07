@@ -63,15 +63,17 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-brand-950/35 via-transparent to-transparent" />
             </div>
-            <Image
-              alt="Commerce dashboard concept showing sales, card payments, and stock alerts"
-              className="relative mx-auto -mt-10 h-auto w-[92%] sm:-mt-20 lg:-mt-32 lg:w-[78%]"
-              height={1972}
-              priority
-              sizes="(max-width: 768px) 92vw, (max-width: 1200px) 78vw, 1000px"
-              src="/images/commerce-dashboard.png"
-              width={3420}
-            />
+            <div className="relative mx-auto -mt-10 w-[92%] overflow-hidden rounded-2xl border-2 border-slate-200/90 shadow-[0_30px_90px_rgba(7,48,113,0.35)] sm:-mt-20 lg:-mt-32 lg:w-[78%]">
+              <Image
+                alt="Commerce dashboard concept showing sales, card payments, and stock alerts"
+                className="h-auto w-full object-cover"
+                height={1972}
+                priority
+                sizes="(max-width: 768px) 92vw, (max-width: 1200px) 78vw, 1000px"
+                src="/images/commerce-dashboard.png"
+                width={3420}
+              />
+            </div>
           </div>
         </div>
       </section>

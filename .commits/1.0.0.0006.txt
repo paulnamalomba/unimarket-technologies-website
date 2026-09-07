@@ -1,0 +1,126 @@
+unimarket website v1.0.0.0006
+Release Date: 2026-09-07
+Classification: Unimarket Technologies Workspace — Technical Release & Visual Polish Note
+Status: Working-tree documentation baseline; prototype UI framing enhancement
+================================================================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0.0006] - 2026-09-07
+
+1. DIFF BASELINE AND VERSION IDENTITY
+------------------------------------
+Version Name: unimarket website v1.0.0.0006
+Version Sequence: 1.0.0 -> 1.0.0.0001 -> 1.0.0.0002 -> 1.0.0.0003 -> 1.0.0.0004 -> 1.0.0.0005 -> 1.0.0.0006
+Previous Documented Commit: 6c9b066c1f1f1d7d0a27341853fc429a1b15104a (unimarket website v1.0.0.0005)
+Target Release Note Location: .commits/1.0.0.0006.txt (accessible via .commit/1.0.0.0006.txt)
+
+Baseline Scope Command:
+  git diff 6c9b066 -- . ':(exclude).commits/**' ':(exclude).commit/**'
+  git diff --numstat 6c9b066 -- src/
+  git status --short
+
+Effective Runtime Scope:
+  - Modified Code Files: 2 (src/app/page.tsx, src/app/solutions/pos-eis/page.tsx)
+  - Diff Statistics:
+    - src/app/page.tsx: +11 / -9 lines
+    - src/app/solutions/pos-eis/page.tsx: +2 / -2 lines
+  - Incremental Visual Refinement: Wrapped Next.js <Image> instances in dedicated framing containers
+    providing explicit border radius (rounded-2xl, 16px), border thickness (border-2, 2px),
+    hardware card elevation shadow, and WebKit overflow clipping.
+
+
+2. DASHBOARD IMAGE FRAMING: BORDER RADIUS AND THICKNESS
+-------------------------------------------------------
+Sources: src/app/page.tsx, src/app/solutions/pos-eis/page.tsx
+Components refined: Prototype <Image src="/images/commerce-dashboard.png" /> containers
+
+- Rationale & Visual Engineering:
+  The raw screenshot capture (3420 x 1972) possesses orthogonal 90-degree rectangle corners and bright/off-white
+  edge pixels (#f9fafc / #ffffff). Without explicit border thickness and radius clipping, the unstyled image
+  rendered as an abrupt cut-out against the gradient backgrounds. To match the hardware-styled design system
+  established by the original CommerceDashboard component and .image-frame class, the images now feature
+  standardized border thickness, curvature, and elevation.
+
+- Homepage Hero Section (src/app/page.tsx):
+  - Wrapped the <Image> element in an explicit styling and clipping container:
+    ```tsx
+    <div className="relative mx-auto -mt-10 w-[92%] overflow-hidden rounded-2xl border-2 border-slate-200/90 shadow-[0_30px_90px_rgba(7,48,113,0.35)] sm:-mt-20 lg:-mt-32 lg:w-[78%]">
+      <Image
+        alt="Commerce dashboard concept showing sales, card payments, and stock alerts"
+        className="h-auto w-full object-cover"
+        height={1972}
+        priority
+        sizes="(max-width: 768px) 92vw, (max-width: 1200px) 78vw, 1000px"
+        src="/images/commerce-dashboard.png"
+        width={3420}
+      />
+    </div>
+    ```
+  - Applied CSS properties:
+    - `rounded-2xl`: 16px border radius curvature matching core interface cards.
+    - `border-2`: 2px visible border thickness providing sharp edge delineation across both the dark
+      overlapping retail photo above and the light radial gradient below.
+    - `border-slate-200/90`: Neutral high-contrast border tint harmonized with the global theme border token.
+    - `overflow-hidden`: Guarantees that internal image raster pixels are clipped cleanly to the rounded
+      corners without rendering bleed on Safari/WebKit engines.
+    - `shadow-[0_30px_90px_rgba(7,48,113,0.35)]`: Deep navy elevation shadow maintaining visual floating depth.
+
+- Solutions POS + MRA EIS Section (src/app/solutions/pos-eis/page.tsx):
+  - Enhanced the 1.15fr right column container in the dark-panel hero grid:
+    ```tsx
+    <div className="w-full overflow-hidden rounded-2xl border-2 border-white/20 shadow-[0_30px_90px_rgba(7,48,113,0.35)]">
+      <Image
+        alt="Commerce dashboard concept showing sales, card payments, and stock alerts"
+        className="h-auto w-full object-cover"
+        height={1972}
+        priority
+        sizes="(max-width: 1024px) 100vw, 650px"
+        src="/images/commerce-dashboard.png"
+        width={3420}
+      />
+    </div>
+    ```
+  - Applied CSS properties:
+    - `rounded-2xl`: 16px curvature aligning with neighboring interactive elements.
+    - `border-2`: 2px border thickness.
+    - `border-white/20`: Semi-translucent white stroke designed specifically for the deep navy dark-panel
+      gradient, creating a luminous edge consistent with ghost buttons and dark badges.
+    - `overflow-hidden`: Smooth corner clipping preventing rectangular image raster bleed.
+    - `shadow-[0_30px_90px_rgba(7,48,113,0.35)]`: Subtle ambient glow integrating the card into the hero grid.
+
+
+3. CODE FILES TOUCHED
+---------------------
+- Modified Code Files:
+  - src/app/page.tsx:
+    Added `overflow-hidden rounded-2xl border-2 border-slate-200/90 shadow-[...]` wrapper container to the
+    hero commerce dashboard image.
+  - src/app/solutions/pos-eis/page.tsx:
+    Added `overflow-hidden rounded-2xl border-2 border-white/20 shadow-[...]` to the POS/EIS hero dashboard image
+    container.
+
+- Added Version Documentation:
+  - .commits/1.0.0.0006.txt: Release documentation for version 1.0.0.0006.
+
+
+4. COMPATIBILITY AND DEPLOYMENT NOTES
+-------------------------------------
+- Cross-Engine Layout Stability:
+  Applying `overflow-hidden` to the wrapper container instead of directly to replaced element tags (<img />)
+  avoids rendering discrepancies between Gecko, Chromium, and WebKit/Blink where image content might ignore
+  border-radius clipping.
+- Responsive Aspect Ratio:
+  The child `<Image>` preserves `h-auto w-full object-cover` with explicit width (3420) and height (1972),
+  preventing Cumulative Layout Shift (CLS) across mobile (w-[92%]), tablet (sm:-mt-20), and desktop (lg:w-[78%]).
+
+
+5. VALIDATION PERFORMED
+-----------------------
+- Git Diff Inspection:
+  Confirmed clean modifications across src/app/page.tsx (+11/-9) and src/app/solutions/pos-eis/page.tsx (+2/-2)
+  against baseline commit 6c9b066.
+- Layout Verification:
+  Verified class tokens: `rounded-2xl`, `border-2`, `border-slate-200/90`, `border-white/20`, and `overflow-hidden`
+  conform to the Tailwind configuration and Unimarket Technologies design system specifications.

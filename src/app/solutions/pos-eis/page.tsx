@@ -93,10 +93,10 @@ export default function PosEisPage() {
               </Button>
             </div>
           </div>
-          <div className="w-full">
+          <div className="w-full overflow-hidden rounded-2xl border-2 border-white/20 shadow-[0_30px_90px_rgba(7,48,113,0.35)]">
             <Image
               alt="Commerce dashboard concept showing sales, card payments, and stock alerts"
-              className="h-auto w-full"
+              className="h-auto w-full object-cover"
               height={1972}
               priority
               sizes="(max-width: 1024px) 100vw, 650px"
