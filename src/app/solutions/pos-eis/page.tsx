@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 
-import { CommerceDashboard } from '@/components/commerce-dashboard';
+// import { CommerceDashboard } from '@/components/commerce-dashboard';
 import { ExpandingImageCards } from '@/components/expanding-image-cards';
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
@@ -93,7 +93,17 @@ export default function PosEisPage() {
               </Button>
             </div>
           </div>
-          <CommerceDashboard />
+          <div className="w-full">
+            <Image
+              alt="Commerce dashboard concept showing sales, card payments, and stock alerts"
+              className="h-auto w-full"
+              height={1972}
+              priority
+              sizes="(max-width: 1024px) 100vw, 650px"
+              src="/images/commerce-dashboard.png"
+              width={3420}
+            />
+          </div>
         </div>
       </section>
 

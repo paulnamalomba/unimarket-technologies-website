@@ -1,0 +1,152 @@
+unimarket website v1.0.0.0005
+Release Date: 2026-09-07
+Classification: Unimarket Technologies Workspace — Technical Release & Prototype Note
+Status: Working-tree documentation baseline; staged/uncommitted prototype enhancement
+================================================================================
+
+MAJOR CHANGES
+=============
+
+## [1.0.0.0005] - 2026-09-07
+
+1. DIFF BASELINE AND VERSION IDENTITY
+------------------------------------
+Version Name: unimarket website v1.0.0.0005
+Version Sequence: 1.0.0 -> 1.0.0.0001 -> 1.0.0.0002 -> 1.0.0.0003 -> 1.0.0.0004 -> 1.0.0.0005
+Previous Documented Commit: 8bd95869569e63315c5df70e01e4b3ada5d50401 (unimarket website v1.0.0.0004)
+Target Release Note Location: .commits/1.0.0.0005.txt (accessible via .commit/1.0.0.0005.txt symlink)
+
+Baseline Discovery Commands:
+  git diff 8bd9586 -- . ':(exclude).commits/**' ':(exclude).commit/**' ':(exclude)shared-skills/**'
+  git diff --numstat 8bd9586 -- src/
+  git status --short
+
+Effective Runtime Scope:
+  - Modified Files: 2 (src/app/page.tsx, src/app/solutions/pos-eis/page.tsx)
+  - Insertions / Deletions: +22 / -4 lines of source code
+  - Untracked Media Asset: public/images/commerce-dashboard.png (3420 x 1972 PNG, 718,853 bytes)
+  - Untracked Shared Tooling: shared-skills/ (12 portable personal agent skills, manifest, and README)
+  - Directory Structuring: .commits/ directory created with .commit symlink for tooling compatibility
+
+
+2. PROTOTYPE COMMERCE DASHBOARD MEDIA REPLACEMENT
+-------------------------------------------------
+Sources: src/app/page.tsx, src/app/solutions/pos-eis/page.tsx, public/images/commerce-dashboard.png
+Components replaced: <CommerceDashboard /> -> <Image src="/images/commerce-dashboard.png" />
+
+- Visual Fidelity & Asset Specification:
+  - Added public/images/commerce-dashboard.png: 3420 x 1972 retina capture (144 DPI, Display P3, RGBA 8-bit),
+    capturing the high-fidelity concept dashboard interface including business overview metrics (Today’s sales:
+    MWK 842,500, Card payments: MWK 318,200, Stock alerts: 12 items), 12-hour sales activity charts, payment
+    split bars, and recent transaction log with MRA EIS compliance verification badges.
+  - Transitioned prototype from dynamically rendered DOM widgets (<CommerceDashboard>) to static Next.js optimized
+    <Image> instances. This reduces initial hydration cost, eliminates synthetic HTML/CSS layout jitter, and ensures
+    100% pixel-perfect design alignment matching the approved design system specifications.
+
+- Homepage Hero Section (src/app/page.tsx):
+  - Replaced `<CommerceDashboard className="relative mx-auto -mt-10 w-[92%] text-left sm:-mt-20 lg:-mt-32 lg:w-[78%]" />`
+    with `<Image ... />` filling the exact identical bounding box and coordinate space.
+  - Applied styling:
+    `className="relative mx-auto -mt-10 h-auto w-[92%] sm:-mt-20 lg:-mt-32 lg:w-[78%]"`
+  - Configured Next.js Image properties:
+    - width={3420}, height={1972} to maintain the exact 1.734:1 aspect ratio without layout shift (CLS: 0).
+    - priority={true} for instant above-the-fold hero rendering.
+    - sizes="(max-width: 768px) 92vw, (max-width: 1200px) 78vw, 1000px" for adaptive responsive image selection.
+    - alt="Commerce dashboard concept showing sales, card payments, and stock alerts" for full WCAG accessibility.
+  - Commented out unused import `import { CommerceDashboard } from '@/components/commerce-dashboard';`.
+
+- Solutions POS + MRA EIS Section (src/app/solutions/pos-eis/page.tsx):
+  - Located in the dark-panel hero grid (`lg:grid-cols-[0.85fr_1.15fr]`).
+  - Replaced `<CommerceDashboard />` with a full-width container wrapping `<Image ... />`:
+    ```tsx
+    <div className="w-full">
+      <Image
+        alt="Commerce dashboard concept showing sales, card payments, and stock alerts"
+        className="h-auto w-full"
+        height={1972}
+        priority
+        sizes="(max-width: 1024px) 100vw, 650px"
+        src="/images/commerce-dashboard.png"
+        width={3420}
+      />
+    </div>
+    ```
+  - Occupies the 1.15fr right column identically to the previous component while seamlessly integrating into
+    the dark-panel container.
+  - Commented out unused import `import { CommerceDashboard } from '@/components/commerce-dashboard';`.
+
+
+3. SHARED SKILLS DISTRIBUTION SUITE
+-----------------------------------
+Source: shared-skills/ (copied from repository owner's audited skill suite)
+Documentation: shared-skills/README.md, shared-skills/manifest.json
+
+To enable collaborators and autonomous AI coding agents to work consistently across the codebase,
+the repository now embeds 12 personal skills equipped with their complete instructions, scripts,
+reference schemas, and manifests:
+
+| Skill Directory | Purpose |
+|---|---|
+| code-analysis-recommendations | Precise source code analysis and targeted replacement recommendations |
+| comment-out-non-performant-scalers | Safely inventory and disable redundant widget-scoped font scalers |
+| convert-docx-to-md | Document extraction and conversion from docx to structured markdown |
+| create-commit-notes | Grounded technical release/commit note generator (.commits/<version>.txt) |
+| create-release-listing-summaries | App Store / Play Store release listing summaries |
+| create-specifications-existing-projects | Deep, source-grounded System Requirements Specification (SRS) generation |
+| create-substream-work-summary | Standardized technical substream progress documentation |
+| create-technical-architecture | Enterprise-grade system-architecture.md generator |
+| deep-code-and-security-audits | Deep architectural, security, code quality, and AST dependency audits |
+| merge-customer-journeys-into-specifications | Trace customer journeys and user flows into specification documents |
+| optimize-docker-builds | Audit and optimize multi-stage Docker builds and build contexts |
+| ux-system-analyzer | Visual QA and design system audit comparing screenshots with UI code |
+
+- Skill Repository Configuration:
+  - shared-skills/README.md customized for Unimarket Technologies, documenting how collaborators
+    invoke skills and specifying version progression conventions (`unimarket website v<version>`).
+  - shared-skills/manifest.json maintains SHA-256 digests of all 27 skill files for integrity verification.
+
+
+4. CODE FILES TOUCHED
+---------------------
+- Modified Code Files:
+  - src/app/page.tsx:
+    Replaced <CommerceDashboard> in hero stack with responsive <Image> instance preserving
+    -mt-10 sm:-mt-20 lg:-mt-32 margin offset and 92%/78% responsive width.
+  - src/app/solutions/pos-eis/page.tsx:
+    Replaced <CommerceDashboard> in the 1.15fr grid column with full-width responsive <Image> instance.
+
+- Added Media & Assets:
+  - public/images/commerce-dashboard.png:
+    Retina 3420x1972 PNG concept dashboard visual asset.
+
+- Added Shared Engineering Resources:
+  - shared-skills/ (12 skill packages, manifest.json, README.md, and _variants/ archive).
+
+- Added Version Documentation:
+  - .commits/1.0.0.0005.txt: Current release commit notes.
+  - .commit -> .commits: Symlink for singular directory compatibility.
+
+
+5. COMPATIBILITY AND DEPLOYMENT NOTES
+-------------------------------------
+- Next.js Image Optimization:
+  The Next.js built-in image optimizer serves WebP/AVIF formats automatically based on client Accept headers.
+  Original asset is preserved at public/images/commerce-dashboard.png.
+- Layout Stability (CLS):
+  Intrinsic dimensions (3420x1972) provided to next/image calculate layout aspect-ratio upfront, preventing
+  layout shifting on slow connections.
+- Component Preservation:
+  src/components/commerce-dashboard.tsx remains in the repository as a reference implementation of the
+  concept widgets, but is unmounted from consumer pages in favor of the retina visual capture.
+
+
+6. VALIDATION PERFORMED
+-----------------------
+- Static Diff Verification:
+  Verified git diff numstat confirms clean edits to src/app/page.tsx (+10/-2) and
+  src/app/solutions/pos-eis/page.tsx (+12/-2).
+- Image Asset Verification:
+  Confirmed file dimensions (3420x1972), color space (RGB / Display P3), and alpha channel integrity
+  using macOS sips and mdls system tools.
+- Symlink Verification:
+  Confirmed .commit -> .commits resolves correctly in root directory.

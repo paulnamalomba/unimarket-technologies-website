@@ -1,0 +1,141 @@
+{
+  "snapshotDate": "2026-09-06",
+  "defaultSource": "personal agents skills",
+  "files": [
+    {
+      "path": "code-analysis-recommendations/SKILL.md",
+      "source": "agents/code-analysis-recommendations/SKILL.md",
+      "sha256": "c92661e339d35921c1bcbdee788c7ce201fefe78204c0e1ee2ea324228e676e6"
+    },
+    {
+      "path": "code-analysis-recommendations/assets/example_asset.txt",
+      "source": "agents/code-analysis-recommendations/assets/example_asset.txt",
+      "sha256": "d6654a72588c3d9dba2a3e2eee9b593e0721feab028c4a93f7391f8814169bd3"
+    },
+    {
+      "path": "code-analysis-recommendations/references/example_reference.md",
+      "source": "agents/code-analysis-recommendations/references/example_reference.md",
+      "sha256": "2c9028a05403598e6828990a0e8aa23de008ce144bce08415215544804cc8ce8"
+    },
+    {
+      "path": "code-analysis-recommendations/scripts/example_script.cjs",
+      "source": "agents/code-analysis-recommendations/scripts/example_script.cjs",
+      "sha256": "cc1afc87e934e485b979c0eb75625aa1e32fc4b94b3dde2249fc8073ff395edf"
+    },
+    {
+      "path": "comment-out-non-performant-scalers/SKILL.md",
+      "source": "agents/comment-out-non-performant-scalers/SKILL.md",
+      "sha256": "80fb3a3952b9e0033e6268b1cde1f8c5cfbf2d28403e96f105d51238d50efab7"
+    },
+    {
+      "path": "comment-out-non-performant-scalers/agents/openai.yaml",
+      "source": "agents/comment-out-non-performant-scalers/agents/openai.yaml",
+      "sha256": "d681a5937313a4ed1a437f7e4e2b7559c643d7ebf4a04f40598d5622d32a7c13"
+    },
+    {
+      "path": "convert-docx-to-md/SKILL.md",
+      "source": "agents/convert-docx-to-md/SKILL.md",
+      "sha256": "3f671b60efb20cb41cf5a9e1c825ab4ddd8133e50e92d760bb4771b2c923757d"
+    },
+    {
+      "path": "create-commit-notes/SKILL.md",
+      "source": "agents/create-commit-notes/SKILL.md",
+      "sha256": "f7fc6d12b4f1de50e717850b2cb6db7f83823e1c72babb24be6d71b3c40042d2"
+    },
+    {
+      "path": "create-release-listing-summaries/SKILL.md",
+      "source": "agents/create-release-listing-summaries/SKILL.md",
+      "sha256": "02345f0712d69f30f27b4bc66a0355d6e3568e543cff3a55dd041c63e4a9fc40"
+    },
+    {
+      "path": "create-specifications-existing-projects/SKILL.md",
+      "source": "agents/create-specifications-existing-projects/SKILL.md",
+      "sha256": "6f0ee7823be4f681b9d94035c0e4e013f0ee2d6f2735d8182027159ee1c188ff"
+    },
+    {
+      "path": "create-specifications-existing-projects/agents/openai.yaml",
+      "source": "agents/create-specifications-existing-projects/agents/openai.yaml",
+      "sha256": "f2ca7f359af7ca6e5846857e055704cc26d818fdb593a5e345c899f5d0732772"
+    },
+    {
+      "path": "create-specifications-existing-projects/references/srs-structure.md",
+      "source": "agents/create-specifications-existing-projects/references/srs-structure.md",
+      "sha256": "bd1305ee1898e0907fe73082beb1feb911639b68db2b604fd53585e6f39a80fc"
+    },
+    {
+      "path": "create-substream-work-summary/SKILL.md",
+      "source": "agents/create-substream-work-summary/SKILL.md",
+      "sha256": "d33e686b9205609ad6e7dc127dd28da6710b2b1160f6f491424410ff721344ba"
+    },
+    {
+      "path": "create-technical-architecture/SKILL.md",
+      "source": "agents/create-technical-architecture/SKILL.md",
+      "sha256": "04de9df36dab4df9d5566bb12bfcae46acaae2e70db849aeee6f652cc927cbb4"
+    },
+    {
+      "path": "deep-code-and-security-audits/SKILL.md",
+      "source": "agents/deep-code-and-security-audits/SKILL.md",
+      "sha256": "d7daf8b125a12e1b5a2ef9f3bdf12f00a074bfa6daf2940f5c2f555d9b1229a0"
+    },
+    {
+      "path": "merge-customer-journeys-into-specifications/SKILL.md",
+      "source": "agents/merge-customer-journeys-into-specifications/SKILL.md",
+      "sha256": "dff7e2de8e865bf6d45f864ea9d24b6ea5e2f117ab458508d2cab9c2c908281f"
+    },
+    {
+      "path": "merge-customer-journeys-into-specifications/agents/openai.yaml",
+      "source": "agents/merge-customer-journeys-into-specifications/agents/openai.yaml",
+      "sha256": "95474d739b772cd42fc012dc25bc5f3162ca3468d9733efd354fe5d6d118287a"
+    },
+    {
+      "path": "merge-customer-journeys-into-specifications/references/merge-traceability-template.md",
+      "source": "agents/merge-customer-journeys-into-specifications/references/merge-traceability-template.md",
+      "sha256": "e6e3d84a30d1cd650718e8a9dcebb0ed95b7d6e7f809fe296a28cc09dcb6ba6a"
+    },
+    {
+      "path": "optimize-docker-builds/SKILL.md",
+      "source": "agents/optimize-docker-builds/SKILL.md",
+      "sha256": "fcd23d1102ef3b540fa089ec6826556cb6f1ee2aa941521f8095f6bffaf3a8af"
+    },
+    {
+      "path": "optimize-docker-builds/agents/openai.yaml",
+      "source": "agents/optimize-docker-builds/agents/openai.yaml",
+      "sha256": "e7e50bc8e394b5f360c539440eafe4e636ce148f29ea6e33d09467947dde7850"
+    },
+    {
+      "path": "optimize-docker-builds/references/patterns.md",
+      "source": "agents/optimize-docker-builds/references/patterns.md",
+      "sha256": "cbe850886bf68cf97041e7bbcbb76f7f18a1a3c917e8a9ed6c560a6714975f58"
+    },
+    {
+      "path": "optimize-docker-builds/scripts/benchmark_docker_build.sh",
+      "source": "agents/optimize-docker-builds/scripts/benchmark_docker_build.sh",
+      "sha256": "834ac5a135c557899abe8b2f391b158bac8b31e9946f3c1f5a23052b1032b018"
+    },
+    {
+      "path": "ux-system-analyzer/SKILL.md",
+      "source": "agents/ux-system-analyzer/SKILL.md",
+      "sha256": "320eb0178b04266d6cc1ef95e50e43e6575fc9fce4ff40f6c64a8a46c3d98142"
+    },
+    {
+      "path": "_variants/codex/code-analysis-recommendations/SKILL.md",
+      "source": "codex/code-analysis-recommendations/SKILL.md",
+      "sha256": "2fb58aed5af0b2b45a3caa96bb0895bebe78988f28d50542dd9eb9e16c1db8ca"
+    },
+    {
+      "path": "_variants/codex/code-analysis-recommendations/assets/example_asset.txt",
+      "source": "codex/code-analysis-recommendations/assets/example_asset.txt",
+      "sha256": "d6654a72588c3d9dba2a3e2eee9b593e0721feab028c4a93f7391f8814169bd3"
+    },
+    {
+      "path": "_variants/codex/code-analysis-recommendations/references/example_reference.md",
+      "source": "codex/code-analysis-recommendations/references/example_reference.md",
+      "sha256": "2c9028a05403598e6828990a0e8aa23de008ce144bce08415215544804cc8ce8"
+    },
+    {
+      "path": "_variants/codex/code-analysis-recommendations/scripts/example_script.cjs",
+      "source": "codex/code-analysis-recommendations/scripts/example_script.cjs",
+      "sha256": "cc1afc87e934e485b979c0eb75625aa1e32fc4b94b3dde2249fc8073ff395edf"
+    }
+  ]
+}
